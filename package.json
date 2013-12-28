@@ -1,0 +1,11 @@
+{
+  "name": "frutta",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Johannes Zellner <webmaster@nebulon.de>",
+  "license": "ISC",
+  "dependencies": {
+    "johnny-five": "~0.7.10"
+  }
+}
