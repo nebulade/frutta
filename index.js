@@ -21,4 +21,19 @@ board.on('ready', function () {
     button.on('up', function() {
         led.off();
     });
+
+    var input = new five.Sensor({ pin: 'A0', freq: 250 });
+    input.on("data", function() {
+        var voltage = this.value * 0.004882814;
+        var celsius = (voltage - 0.5) * 100;
+        var fahrenheit = celsius * (9 / 5) + 32;
+
+        console.log(celsius + "°C", fahrenheit + "°F");
+    });
+
+    this.repl.inject({
+        led: led,
+        button: button,
+        input: input
+    });
 });
